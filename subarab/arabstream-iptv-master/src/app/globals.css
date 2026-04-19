@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-100: #fef08a;
+  --color-brand-400: #facc15;
+  --color-brand-500: #eab308;
+  --color-brand-600: #ca8a04;
+  --color-brand-900: #713f12;
+  
+  --color-background: #1a1d24;
+  --color-foreground: #f4f4f5;
+  
+  --color-card: #222630;
+  --color-card-foreground: #f4f4f5;
+  
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  --font-sans: var(--font-tajawal), system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #0f0f13;
+    --foreground: #f4f4f5;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism utilities */
+@layer utilities {
+  .glass {
+    @apply bg-card backdrop-blur-xl border border-border;
+  }
+  
+  .glass-hover {
+    @apply hover:bg-white/10 transition-colors duration-300;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-100 to-brand-500;
+  }
+}
